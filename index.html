@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Merger - Gabung PDF Online</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Sortable.js untuk drag & drop -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>🔄 PDF Merger</h1>
-        <p>Gabung beberapa file PDF menjadi satu</p>
+        <h1>🔄 PDF Merger Pro</h1>
+        <p>Gabung beberapa file PDF menjadi satu - Atur urutan sesukamu!</p>
         
         <div class="upload-area" id="dropArea">
             <input type="file" id="fileInput" accept=".pdf" multiple>
@@ -19,8 +21,17 @@
             </div>
         </div>
 
+        <div class="reorder-info" id="reorderInfo" style="display: none;">
+            ⬆️ Drag file untuk mengatur urutan (file atas = halaman pertama)
+        </div>
+
         <div class="file-list" id="fileList">
             <!-- List file akan muncul di sini -->
+        </div>
+
+        <div class="page-preview" id="pagePreview" style="display: none;">
+            <h3>📄 Preview Urutan Halaman:</h3>
+            <div class="preview-list" id="previewList"></div>
         </div>
 
         <div class="controls">
