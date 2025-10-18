@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger - Gabung PDF Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 PDF Merger</h1>
+        <p>Gabung beberapa file PDF menjadi satu</p>
+        
+        <div class="upload-area" id="dropArea">
+            <input type="file" id="fileInput" accept=".pdf" multiple>
+            <div class="upload-text">
+                <span>📁 Drop file PDF di sini atau klik untuk upload</span>
+                <small>Maksimal 10 file, masing-masing ≤ 5MB</small>
+            </div>
+        </div>
+
+        <div class="file-list" id="fileList">
+            <!-- List file akan muncul di sini -->
+        </div>
+
+        <div class="controls">
+            <button id="mergeBtn" disabled>Gabungkan PDF</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+
+        <div class="progress" id="progress" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span id="progressText">Menggabungkan...</span>
+        </div>
+    </div>
+
+    <!-- PDF.js worker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
